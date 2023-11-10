@@ -1,0 +1,3 @@
+<section *ngFor="let new of storyList">
+    <app-story-item id="story-{{new.id}}"class="story-item" [story]="new"></app-story-item>
+</section>

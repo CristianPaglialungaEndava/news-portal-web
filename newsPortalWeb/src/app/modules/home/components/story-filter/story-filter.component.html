@@ -1,0 +1,15 @@
+<div class="filter">
+    <mat-button-toggle-group [formControl]="filterForm.controls.storyType" aria-label="Font Style">
+        <mat-button-toggle value="new" (click)="sendFilterParams()">New</mat-button-toggle>
+        <mat-button-toggle value="top" (click)="sendFilterParams()">Top</mat-button-toggle>
+        <mat-button-toggle value="best" (click)="sendFilterParams()">Best</mat-button-toggle>
+        <mat-button-toggle value="all" (click)="sendFilterParams()">All</mat-button-toggle>
+    </mat-button-toggle-group>
+    <mat-form-field class="example-form-field">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" [formControl]="filterForm.controls.title">
+        <button *ngIf="filterForm.controls.title.value" matSuffix mat-icon-button aria-label="Clear" (click)="filterForm.controls.title.setValue('')">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+</div>

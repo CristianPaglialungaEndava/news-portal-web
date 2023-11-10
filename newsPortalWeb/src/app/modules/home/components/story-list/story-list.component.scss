@@ -1,0 +1,15 @@
+section{
+    background: url("../../../../../assets/Images/newsPapperBackground.png") repeat ;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.story-item{
+    display: block;
+    width: 60%;
+    min-width: 375px;
+    margin: 30px 0;
+    
+}

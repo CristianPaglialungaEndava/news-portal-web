@@ -1,9 +1,6 @@
-
-
-
-<ul *ngIf="news">
-    <li *ngFor="let new of news | async">
-    <p>{{ new.title}}</p>
-    <p>{{ new.url}}</p>
-    </li>
-</ul>
+<header><img src="../../../../../assets/Images/NewYorkTimes.png" alt="new-yor-times-image"></header>
+<ng-container *ngIf="$news | async as news">
+    <app-story-filter></app-story-filter>
+    <app-story-list [storyList]="news.results"></app-story-list>
+    <app-paginator [length]="news.countTotal" [pageSize]="5"></app-paginator>
+</ng-container>
