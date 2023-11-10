@@ -1,0 +1,9 @@
+
+
+
+<ul *ngIf="news">
+    <li *ngFor="let new of news | async">
+    <p>{{ new.title}}</p>
+    <p>{{ new.url}}</p>
+    </li>
+</ul>
