@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, catchError, take } from 'rxjs';
 import { GetStoriesRequestDto } from 'src/app/Models/Dtos/get-news-request-dto';
 import { GetStoriesResponseDto } from 'src/app/Models/Dtos/get-news-response-dto';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class NewsPortalService {
 
   constructor(private http: HttpClient) { }
   private $paginatedAndFilteredStories = new BehaviorSubject<GetStoriesResponseDto| null>(null);
-  private baseUrl = 'https://localhost:44317';
+  private baseUrl = environment.apiKey;
   private filter:GetStoriesRequestDto ={
     page:1,
     pageSize:5,
